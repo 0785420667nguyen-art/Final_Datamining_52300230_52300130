@@ -1,0 +1,153 @@
+
+\documentclass{article} % Tạo một bản báo cáo
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Để sử dụng Tiếng Việt
+\usepackage[fontsize=13pt]{scrextend} % Set fontsize=13pt
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{natbib} % thư viện reference
+\bibliographystyle{apalike}
+
+% Cấu hình lề đồng nhất cho toàn bộ báo cáo
+\usepackage[paperheight=29.7cm,paperwidth=21cm,left=3cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+
+\usepackage{longtable} %Dùng cho table
+\usepackage{mathptmx} % Time New Roman
+\usepackage{amsmath} % Công thức toán học
+\usepackage{graphicx} % Thư viện chèn ảnh
+\usepackage{float} % Set vị trí chèn ảnh
+\usepackage{wrapfig}
+\usepackage{tikz} % Thư viện tạo khung bìa
+\usetikzlibrary{calc} % Thư viện tikz
+\usepackage{indentfirst} % Thư viện thụt đầu dòng
+\renewcommand{\baselinestretch}{1.5} % Giãn dòng 1.5
+\setlength{\parskip}{6pt} % Spacing after
+\setlength{\parindent}{1cm} % Set khoảng cách thụt đầu dòng mỗi đoạn
+\usepackage{titlesec} % Thư viện để set up các kiểu chữ
+\setcounter{secnumdepth}{4} % 4 Heading
+\titlespacing*{\section}{0pt}{0pt}{15pt} % Heading 1
+\titleformat*{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}
+
+\titlespacing*{\subsection}{0pt}{3pt}{0pt} % Heading 2
+\titleformat*{\subsection}{\fontsize{14pt}{0pt}\selectfont \bfseries}
+
+\titlespacing*{\subsubsection}{0pt}{6pt}{0pt} % Heading 3
+\titleformat*{\subsubsection}{\fontsize{13pt}{0pt}\selectfont \bfseries \itshape}
+
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt} % Heading 4
+\titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
+
+\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Hình}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\usepackage[font=bf]{caption}
+\captionsetup[figure]{labelsep=space}
+
+\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Bảng}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\captionsetup[table]{labelsep=space}
+
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.3\hsize}X}
+\newcolumntype{y}{>{\hsize=.4\hsize}X}
+\newcolumntype{d}{>{\hsize=.1\hsize}X}
+\newcolumntype{a}{>{\hsize=1.1\hsize}X}
+\newcolumntype{g}{>{\hsize=5\hsize}X}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % Thay đổi đánh số phương trình mặc định
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{defn}[theorem]{Định nghĩa}
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{lemma}[theorem]{Bổ đề}
+
+\usepackage{lipsum} % Thư viện tạo chữ linh tinh.
+\renewcommand{\contentsname}{MỤC LỤC}
+\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ}
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
+\renewcommand{\refname}{TÀI LIỆU THAM KHẢO}
+
+\usepackage[unicode]{hyperref}
+\usepackage{colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage{forloop}
+\newcounter{loopcntr}
+\newcommand{\rpt}[2][1]{\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}}
+
+\usepackage{enumitem} % modify enumerate format
+\setitemize{itemsep=0pt,leftmargin=1.25cm,topsep = 3pt} % modify enumerate label style
+
+
+% DỮ LIỆU
+\newcommand{\khoa}{CÔNG NGHỆ THÔNG TIN} %TÊN NGÀNH, KHOA.
+\newcommand{\mon}{KHAI PHÁ DỮ LIỆU}
+\newcommand{\chuyennganh}{KHOA HỌC DỮ LIỆU VÀ TRÍ TUỆ NHÂN TẠO}
+\newcommand{\de}{PHÂN LỚP SENTIMENT ANALYSIS VỚI YOUTUBE API: THU THẬP, CHUẨN HÓA VÀ GÁN NHÃN DỮ LIỆU BÌNH LUẬN PHIM}
+\newcommand{\gvhd}{TS. TRẦN THANH PHƯỚC} %TÊN CỦA GIẢNG VIÊN HƯỚNG DẪN
+\newcommand{\svmot}{ĐỖ TÀI KHẢI NGUYÊN - 52300230} %Sinh viên 1
+\newcommand{\svhai}{TỐNG PHƯƠNG NAM - 52300130}%Sinh viên 2
+\newcommand{\lop}{DH52CS}%Lop
+\newcommand{\khoahoc}{2023-2027}%Khoa
+\newcommand{\nam}{2026}
+\newcommand{\ngay}{12}
+\newcommand{\thang}{5}
+
+
+\begin{document}
+	
+	\input{Template/TrangBia}
+	\input{Template/TrangPhuBia}
+	\input{Template/LoiCamOn}
+	\input{Template/CamKet}
+	\input{Template/TomTat}
+	
+	
+	% Tạo mục lục tự động
+	\tableofcontents 
+	\cleardoublepage
+	
+	\pagenumbering{roman} % Đánh số thứ tự la mã
+	%Tạo danh mục hình vẽ.
+	{\let\oldnumberline\numberline
+		\renewcommand{\numberline}{Hình~\oldnumberline}
+		\listoffigures} 
+	\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC HÌNH VẼ}
+	
+	%Tạo danh mục bảng biểu.
+	{\let\oldnumberline\numberline
+		\renewcommand{\numberline}{Bảng~\oldnumberline}
+		\listoftables}
+	\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC BẢNG BIỂU}
+	
+	
+	\input{Template/DanhMucVietTat} % Danh mục ký hiệu và chữ viết tắt
+	
+	\pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
+
+%---------------------Chương 1--------------
+% Đánh số trang
+
+% Chương 1
+\include{chuongs/chuong1}       
+
+%-----------Chương 2
+\include{chuongs/chuong2} 
+
+%----------Chương 3
+\include{chuongs/chuong3}
+	
+%-----------Chương 4
+\include{chuongs/chuong4}
+	
+%--------------Chương 5
+\include{chuongs/chuong5}
+
+%--------------Nếu còn thì làm tương tự
+        	
+ %---------------Phần tài liệu tham khả sử dụng dạng APA như thầy ví trong phần đầu chương 1 như "(\cite{smith2020}})" và nội dung phải cite phải tạo như trong "tailieuthamkhao.bib".
+\phantomsection\addcontentsline{toc}{section}{\numberline {}TÀI LIỆU THAM KHẢO}
+
+\bibliography{tailieuthamkhao}
+% \input{appendix} % Phụ lục nếu có
+	
+\end{document}
+
