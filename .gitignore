@@ -45,3 +45,7 @@ desktop.ini
 *.tmp
 *.bak
 *.cache
+
+# LaTeX report folder (local only)
+52300230/
+*.pdf
