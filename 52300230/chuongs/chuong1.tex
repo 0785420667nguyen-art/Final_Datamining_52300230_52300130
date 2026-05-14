@@ -55,13 +55,92 @@ Việc lựa chọn đề tài "Phân lớp Sentiment Analysis với YouTube API
     \item Phân tích và trực quan hóa kết quả
 \end{itemize}
 
+\subsection{Cấu trúc dự án và mã nguồn}
+
+\subsubsection{GitHub Repository}
+Toàn bộ mã nguồn và dữ liệu của dự án được công khai trên GitHub:
+
+\textbf{Repository:} \url{https://github.com/0785420667nguyen-art/Final_Datamining_52300230_52300130}
+
+\textbf{Cấu trúc thư mục:}
+\begin{verbatim}
+Final_Datamining_52300230_52300130/
+├── data/                      # Dữ liệu và kết quả
+│   ├── youtube_raw_data.csv       # Dữ liệu thô (88,969 rows)
+│   ├── youtube_clean_data.csv     # Dữ liệu sạch
+│   ├── youtube_labeled_data.csv   # Dữ liệu đã gán nhãn
+│   ├── distribution.png           # Biểu đồ phân bố
+│   ├── analysis.png               # Biểu đồ phân tích
+│   └── README.md                  # Hướng dẫn về dữ liệu
+├── source/                    # Mã nguồn
+│   ├── sentiment_analysis.py      # Code chính (6 bước)
+│   ├── app.py                     # Web App (Flask)
+│   ├── get_examples.py            # Script lấy ví dụ
+│   ├── templates/
+│   │   └── index.html            # Giao diện web
+│   ├── run.bat                    # Chạy dự án chính
+│   ├── run_app.bat                # Chạy web app
+│   └── README.md                  # Hướng dẫn về code
+├── 52300230/                  # Báo cáo LaTeX
+│   ├── main.tex
+│   ├── chuongs/
+│   └── image/
+├── requirements.txt           # Thư viện Python
+├── .gitignore                 # Git ignore
+└── README.md                  # Hướng dẫn tổng quan
+\end{verbatim}
+
+\subsubsection{Vị trí dữ liệu và mã nguồn}
+\textbf{Folder data/:} Chứa tất cả dữ liệu thu thập và kết quả phân tích
+\begin{itemize}
+    \item 3 file CSV: raw, clean, labeled (tổng 88,969 bình luận)
+    \item 2 file PNG: biểu đồ phân bố và phân tích
+    \item README.md: Mô tả chi tiết về dữ liệu
+\end{itemize}
+
+\textbf{Folder source/:} Chứa toàn bộ mã nguồn Python
+\begin{itemize}
+    \item sentiment\_analysis.py: Code chính (6 bước pipeline)
+    \item app.py: Web application với Flask
+    \item get\_examples.py: Script lấy ví dụ từ dữ liệu
+    \item templates/: Giao diện HTML cho web app
+    \item run.bat, run\_app.bat: Scripts chạy nhanh
+    \item README.md: Hướng dẫn sử dụng code
+\end{itemize}
+
+\subsubsection{Hướng dẫn sử dụng}
+\textbf{Clone repository:}
+\begin{verbatim}
+git clone https://github.com/0785420667nguyen-art/
+    Final_Datamining_52300230_52300130.git
+cd Final_Datamining_52300230_52300130
+\end{verbatim}
+
+\textbf{Cài đặt thư viện:}
+\begin{verbatim}
+pip install -r requirements.txt
+\end{verbatim}
+
+\textbf{Chạy dự án chính:}
+\begin{verbatim}
+cd source
+python sentiment_analysis.py
+\end{verbatim}
+
+\textbf{Chạy web app:}
+\begin{verbatim}
+cd source
+python app.py
+# Truy cập: http://localhost:5000
+\end{verbatim}
+
 \subsection{Cấu trúc báo cáo}
-\textbf{Chương 1:} Tổng quan đề tài
+\textbf{Chương 1:} Tổng quan đề tài - Giới thiệu, mục tiêu, phạm vi, cấu trúc dự án
 
-\textbf{Chương 2:} Cơ sở lý thuyết về Sentiment Analysis và NLP
+\textbf{Chương 2:} Cơ sở lý thuyết - Sentiment Analysis, NLP, YouTube API, TextBlob
 
-\textbf{Chương 3:} Thiết kế hệ thống và quy trình xử lý
+\textbf{Chương 3:} Thiết kế hệ thống - Kiến trúc, module, cấu trúc dữ liệu, ứng dụng demo
 
-\textbf{Chương 4:} Triển khai và đánh giá kết quả
+\textbf{Chương 4:} Triển khai và đánh giá - Môi trường, kết quả, thực nghiệm, phân tích sâu
 
-\textbf{Chương 5:} Kết luận và hướng phát triển
+\textbf{Chương 5:} Kết luận và hướng phát triển - Tổng kết, đánh giá, bài học, hướng phát triển
